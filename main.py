@@ -1,19 +1,15 @@
-# This is a sample Python script.
+import numpy as np
+import matplotlib.pyplot as plt
+import statistics
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+p = 0.7
+rng = np.random.default_rng(42)
+arr = np.zeros(10000)
+for i in range(10000):
+    x = rng.random()
+    arr[i] = 1 if x < p else 0
 
+print(f"E(x) = {np.mean(arr)}")
+print(f"var(x) = {np.var(arr)}")
+print(p*(1-p))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-
-# New code
